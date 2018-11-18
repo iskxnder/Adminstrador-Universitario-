@@ -68,7 +68,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-book"></i>Carreras</a>
                         <ul class="sub-menu children dropdown-menu">
                         <li><i class="menu-icon fa fa-list"></i><a href="{{ route('carrers.index') }}">Lista</a></li>
-                            <li><i class="menu-icon fa fa-edit"></i><a href="{{ route('carrers.index') }}">Registro</a></li>
+                            <li><i class="menu-icon fa fa-edit"></i><a href="{{ route('carrers.create') }}">Registro</a></li>
                         </ul>
                     </li>
 

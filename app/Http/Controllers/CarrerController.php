@@ -21,6 +21,19 @@ class CarrerController extends Controller
     }
 
 
+    public function create()
+    {
+      return view('carrers.create');
+    }
+    
+    
+    public function edit($id)
+    {
+      $carrer = Carrer::find($id);
+      return view('carrers.edit', compact('carrer'));
+    }
+
+
     public function destroy($id)
     {
       $carrer = Carrer::find($id);
