@@ -4,8 +4,7 @@
 <div class="content mt-3">
     <div class="animated fadeIn">
         <div class="row">
-
-        <div class="col-lg-12">
+        <div class="col-lg-8">
             <div class="card">
                 <div class="card-header">
                     <strong class="card-title">Carreras</strong>
@@ -25,8 +24,15 @@
                           <tr>
                             <th scope="row">{{ $carrer->id }}</th>
                             <td>{{ $carrer->name }}</td>
-                            <td><a href="{{ route('carrers.edit', $carrer->id) }}"></a>editar</td>
-                            <td>eliminar</td>
+                            <td><a href="{{ route('carrers.edit', $carrer->id) }}" class="btn btn-primary">editar</a></td>
+
+                            <td>
+                              <form action="{{ route('carrers.destroy', $carrer->id) }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button class="btn btn-primary">borrar</button>
+                              </form>
+                            </td>
                           </tr>
                         @endforeach
 
@@ -35,6 +41,10 @@
                     {!! $carrers->render() !!}
                 </div>
             </div>
+        </div>
+        <div class="col-lg-4">
+            @include('carrers.partials.info')
+            @include('carrers.partials.aside')
         </div>
 
     </div>

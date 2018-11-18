@@ -9,7 +9,7 @@ class CarrerController extends Controller
 {
     public function index()
     {
-      $carrers = Carrer::orderBy('id','DESC')->paginate();
+      $carrers = Carrer::orderBy('id','ASCE')->paginate();
       return view('carrers.index', compact('carrers'));   
     }
 
@@ -18,6 +18,15 @@ class CarrerController extends Controller
     {
       $carrer = Carrer::find($id);
       return view('carrers.show', compact('carrer'));
+    }
+
+
+    public function destroy($id)
+    {
+      $carrer = Carrer::find($id);
+      $carrer->delete();
+
+      return back()->with('info','Carrera eliminada');
     }
 }
 
