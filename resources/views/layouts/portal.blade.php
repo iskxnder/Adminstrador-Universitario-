@@ -171,7 +171,7 @@
                 <div class="full-bg-img flex-center white-text">
                     <ul class="animated fadeInUp col-md-12">
                         <li>
-                            <h1 class="display-3 flex-item font-bold">Biembenido al portal Universitario</h1>
+                            <h1 class="display-3 flex-item font-bold">Bienvenido al portal Universitario</h1>
                             <li>
                                 <h3 class="flex-item">Portal informativo sobre el registro de estudiantes</h3>
                             </li>
