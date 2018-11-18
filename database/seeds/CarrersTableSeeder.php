@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Carrer;
 
-class DatabaseSeeder extends Seeder
+class CarrersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(CarrersTableSeeder::class);
+        factory(Carrer::class, 2)->create();
     }
 }
