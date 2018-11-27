@@ -10,4 +10,9 @@ class Carrer extends Model
         'name', 
     ];
 
+    public function student()
+    {
+        return $this->hasMany('App\Student', 'carrer_id', 'id');
+    }
+
 }

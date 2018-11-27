@@ -7,21 +7,21 @@
 
               <div class="col-lg-8">
                 <div class="card">
-                  <div class="card-header">registrar Carrera</div>
+                  <div class="card-header">Editar Estudiante</div>
                   <div class="card-body card-block">
-                    
-                    @include('carrers.partials.error')
 
-                    {!! Form::open(['route'=> 'carrers.store']) !!}
-                        @include('carrers.partials.form')
+                    @include('carrers.partials.error')
+                    
+                    {!! Form::model($student, ['route'=> ['students.update', $student->id], 'method'=> 'PUT']) !!}
+                        @include('students.partials.form')
                     {!! Form::close() !!}
 
                   </div>
                 </div>
               </div>
-                
+
               <div class="col-lg-4">
-                    @include('carrers.partials.aside')
+                    @include('students.partials.aside-index')
               </div>
 
             </div>

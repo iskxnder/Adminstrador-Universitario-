@@ -7,7 +7,7 @@
 
               <div class="col-lg-8">
                 <div class="card">
-                  <div class="card-header">Example Form</div>
+                  <div class="card-header">Editar Carrera</div>
                   <div class="card-body card-block">
 
                     @include('carrers.partials.error')

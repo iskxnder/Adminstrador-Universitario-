@@ -23,10 +23,16 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Carrer::class, function (Faker\Generator $faker) {
+$factory->define(App\Student::class, function (Faker\Generator $faker) {
 
 
     return [
-        'name' => $faker->text(12),
+        'carrer_id' => rand(1,8),
+        'name' => $faker->firstName($gender = null|'masculino'|'femenino'),
+        'surname' => $faker->text(12),
+        'document' => $faker->text(9),
+        'email' => $faker->unique()->safeEmail,
+        'sex' => $faker->title($gender = null|'masculino'|'femenino'),
+        'nationality' => $faker->text(20),
     ];
 });

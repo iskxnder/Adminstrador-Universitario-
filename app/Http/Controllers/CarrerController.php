@@ -10,8 +10,9 @@ class CarrerController extends Controller
 {
     public function index()
     {
-      $carrers = Carrer::orderBy('id')->paginate();
-      return view('carrers.index', compact('carrers'));   
+      $carrers = Carrer::orderBy('id')->paginate(10);
+      $num = 1;
+      return view('carrers.index', compact('carrers','num'));   
     }
 
     
@@ -30,8 +31,7 @@ class CarrerController extends Controller
 
     public function store(CarrerRequest $request)
     {
-      $carrer = new Carrer;
-
+      $carrer       = new Carrer;
       $carrer->name = $request->name;
 
       $carrer->save();
@@ -50,8 +50,7 @@ class CarrerController extends Controller
 
     public function update(CarrerRequest $request, $id)
     {
-      $carrer = Carrer::find($id);
-
+      $carrer       = Carrer::find($id);
       $carrer->name = $request->name;
 
       $carrer->save();
@@ -61,9 +60,11 @@ class CarrerController extends Controller
     }
 
 
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
-      $carrer = Carrer::find($id);
+    
+      $id_destroy = $request->carrer; 
+      $carrer     = Carrer::find($id_destroy);
       $carrer->delete();
 
       return back()->with('info','Carrera eliminada');
