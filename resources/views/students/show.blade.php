@@ -21,7 +21,7 @@
                                         </a>
                                         <div class="media-body">
                                             <h3 class="text-light display-6">{{ $student->name }} {{ $student->surname }}</h3>
-                                            <p><td>{{ $student->document }}</td></p>
+                                            <p><td>Cédula: {{ $student->document }}</td></p>
                                         </div>
                                     </div>
                                 </div>
@@ -31,13 +31,7 @@
                                         <a href="#"> <i class="fa fa-book"></i> Carrera: {{ $student->carrers->name }} </a>
                                     </li>
                                     <li class="list-group-item">
-                                        <a href="#"> <i class="fa fa-user"></i> Sexo: {{ $student->sex }} </a>
-                                    </li>
-                                    <li class="list-group-item">
                                         <a href="#"> <i class="fa fa-envelope"></i> Correo: {{ $student->email }} </a>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <a href="#"> <i class="fa fa-flag"></i> Nacionalidad: {{ $student->nationality }} </a>
                                     </li>
                                 </ul>
         

@@ -28,11 +28,9 @@ $factory->define(App\Student::class, function (Faker\Generator $faker) {
 
     return [
         'carrer_id' => rand(1,8),
-        'name' => $faker->firstName($gender = null|'masculino'|'femenino'),
-        'surname' => $faker->text(12),
-        'document' => $faker->text(9),
+        'name' => $faker->firstName(),
+        'surname' => $faker->lastName(),
+        'document' => $faker->numberBetween($min = 100000, $max = 999999),
         'email' => $faker->unique()->safeEmail,
-        'sex' => $faker->title($gender = null|'masculino'|'femenino'),
-        'nationality' => $faker->text(20),
     ];
 });

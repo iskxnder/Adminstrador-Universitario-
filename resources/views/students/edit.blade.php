@@ -10,10 +10,10 @@
                   <div class="card-header">Editar Estudiante</div>
                   <div class="card-body card-block">
 
-                    @include('carrers.partials.error')
+                    @include('students.partials.error')
                     
                     {!! Form::model($student, ['route'=> ['students.update', $student->id], 'method'=> 'PUT']) !!}
-                        @include('students.partials.form')
+                        @include('students.partials.form') 
                     {!! Form::close() !!}
 
                   </div>

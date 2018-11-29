@@ -10,9 +10,9 @@
                   <div class="card-header">Registrar Estudiante</div>
                   <div class="card-body card-block">
 
-                    @include('carrers.partials.error')
+                    @include('students.partials.error')
                     
-                    {!! Form::model($student, ['route'=> ['students.store', $student->id], 'method'=> 'PUT']) !!}
+                    {!! Form::open( ['route'=> 'students.store',] ) !!}
                         @include('students.partials.form')
                     {!! Form::close() !!}
 
@@ -21,7 +21,7 @@
               </div>
 
               <div class="col-lg-4">
-                    @include('carrers.partials.')
+                    @include('students.partials.aside-index')
               </div>
 
             </div>

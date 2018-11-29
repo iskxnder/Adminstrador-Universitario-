@@ -19,7 +19,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-male"></i>Estudiantes</a>
                     <ul class="sub-menu children dropdown-menu">
                     <li><i class="fa fa-list"></i><a href="{{ route('students.index') }}">Lista</a></li>
-                        <li><i class="fa fa-edit"></i><a href="#">Registro</a></li>
+                        <li><i class="fa fa-edit"></i><a href="{{ route('students.create') }}">Registro</a></li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">

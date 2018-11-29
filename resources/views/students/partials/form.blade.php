@@ -32,48 +32,21 @@
 
 <div class="form-group">
         <div class="input-group">
-            <div class="input-group-addon">Sexo</div>
-            <select name="carrer" id="" class="form-control">
-                <option value="0">Please select</option>
-                <option value="1">Option #1</option>
-                <option value="2">Option #2</option>
-                <option value="3">Option #3</option>
-            </select>
-            <div class="input-group-addon"><i class="fa fa-group"></i></div>
-        </div>
-</div>
-<div class="form-group">
-        <div class="input-group">
-            <div class="input-group-addon">Nacionalidad</div>
-            <select name="carrer" id="" class="form-control">
-                <option value="0">Please select</option>
-                <option value="1">Option #1</option>
-            </select>
-            <div class="input-group-addon"><i class="fa fa-flag"></i></div>
-        </div>
-</div>
-<div class="form-group">
-        <div class="input-group">
             <div class="input-group-addon">Carrera</div>
-            <select name="carrer" id="" class="form-control">
-                <option value="0">Please select</option>
-                <option value="1">Option #1</option>
-                <option value="2">Option #2</option>
-                <option value="3">Option #3</option>
-            </select>
+            {!! Form::select('carrer_id', $carrers, null, ['class' => 'form-control']) !!}
             <div class="input-group-addon"><i class="fa fa-book"></i></div>
         </div>
 </div>
 <div class="form-group">
         <div class="input-group">
             <div class="input-group-addon">Foto</div>
-            <input type="file" id="email3" name="email3" class="form-control">
+            {{ Form::file('file', ['class' => 'form-control']) }}
             <div class="input-group-addon"><i class="fa fa-picture-o"></i></div>
         </div>
 </div>
 
 <div class="form-actions form-group">
-    <button type="submit" class="btn btn-primary btn-sm">Actualizar</button>
+    <button type="submit" class="btn btn-primary btn-sm">Enviar</button>
 </div>
 
 

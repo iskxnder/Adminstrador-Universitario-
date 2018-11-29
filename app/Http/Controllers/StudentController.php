@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Student;
-use App\Http\Requests\StudentsRequest;
+use App\Carrer;
+use App\Http\Requests\StudentRequest;
 
 class StudentController extends Controller
 {
@@ -18,17 +19,55 @@ class StudentController extends Controller
 
     public function create()
     {
-      return view('students.create', compact('students'));
+      $carrers  = Carrer::all()->pluck('name','id');
+      return view('students.create', compact('students','carrers'));
+    }
+
+
+    public function store(StudentRequest $request)
+    {
+      $student = new Student;
+      
+      $student->name      = $request->name;
+      $student->surname   = $request->surname;
+      $student->document  = $request->document;
+      $student->email     = $request->email;
+      $student->carrer_id = $request->carrer_id;
+      $student->file      = $request->file;
+
+      $student->save();
+
+      return redirect()->route('students.index')
+                       ->with('info', 'El estudiante a sido registrado');
     }
 
 
     public function edit($id)
     {
       $student = Student::find($id);
-      return view('students.edit', compact('student'));
+      $carrers  = Carrer::all()->pluck('name','id');
+      return view('students.edit', compact('student','carrers'));
     }
-    
-    
+
+
+    public function update(StudentRequest $request, $id)
+    {
+      $student = Student::find($id);
+      
+      $student->name      = $request->name;
+      $student->surname   = $request->surname;
+      $student->document  = $request->document;
+      $student->email     = $request->email;
+      $student->carrer_id = $request->carrer_id;
+      $student->file      = $request->file;
+
+      $student->save();
+
+      return redirect()->route('students.index')
+                       ->with('info', 'El estudiante a sido actualizado');
+    }
+
+
     public function show($id)
     {
       $student = Student::find($id);

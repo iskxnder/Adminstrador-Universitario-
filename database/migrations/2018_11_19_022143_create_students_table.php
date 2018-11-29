@@ -20,10 +20,8 @@ class CreateStudentsTable extends Migration
 
             $table->string('name', 12);
             $table->string('surname', 12);
-            $table->string('document',9);
-            $table->string('email', 20);
-            $table->string('sex', 12);
-            $table->string('nationality', 20);
+            $table->string('document',9)->unique();
+            $table->string('email')->unique();
 
             $table->string('file')->nullable();
             

@@ -97,7 +97,11 @@ return [
     |
     */
     'attributes' => [
-        'name' => 'Carrera',
+        'name'     => 'Nombre',
+        'surname'  => 'Apellido',
+        'document' => 'Cédula',
+        'email'    => 'Correo',
+        'carrer'   => 'Carrera',
 
     ],
 ];
