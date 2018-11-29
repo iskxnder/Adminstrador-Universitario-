@@ -17,7 +17,7 @@
                                 <div class="card-header user-header alt bg-dark">
                                     <div class="media">
                                         <a href="#">
-                                            <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="{{ asset('admin/images/admin.jpg') }}">
+                                            <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" src="{{asset ($student->avatar) }}">
                                         </a>
                                         <div class="media-body">
                                             <h3 class="text-light display-6">{{ $student->name }} {{ $student->surname }}</h3>

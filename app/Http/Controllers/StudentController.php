@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Student;
 use App\Carrer;
 use App\Http\Requests\StudentRequest;
+use Illuminate\Support\Facades\Storage;
 
 class StudentController extends Controller
 {
@@ -26,6 +27,11 @@ class StudentController extends Controller
 
     public function store(StudentRequest $request)
     {
+       //IMAGE
+      if ($request->file('avatar')) {
+        $path = Storage::disk('public')->put('image', $request->file('avatar'));
+       } 
+      
       $student = new Student;
       
       $student->name      = $request->name;
@@ -33,7 +39,7 @@ class StudentController extends Controller
       $student->document  = $request->document;
       $student->email     = $request->email;
       $student->carrer_id = $request->carrer_id;
-      $student->file      = $request->file;
+      $student->avatar    = $path;
 
       $student->save();
 
@@ -52,6 +58,10 @@ class StudentController extends Controller
 
     public function update(StudentRequest $request, $id)
     {
+      if ($request->file('avatar')) {
+        $path = Storage::disk('public')->put('image', $request->file('avatar'));
+       } 
+
       $student = Student::find($id);
       
       $student->name      = $request->name;
@@ -59,7 +69,7 @@ class StudentController extends Controller
       $student->document  = $request->document;
       $student->email     = $request->email;
       $student->carrer_id = $request->carrer_id;
-      $student->file      = $request->file;
+      $student->avatar    = $path;
 
       $student->save();
 

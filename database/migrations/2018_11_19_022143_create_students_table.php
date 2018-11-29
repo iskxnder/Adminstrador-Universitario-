@@ -23,7 +23,7 @@ class CreateStudentsTable extends Migration
             $table->string('document',9)->unique();
             $table->string('email')->unique();
 
-            $table->string('file')->nullable();
+            $table->string('avatar')->nullable();
             
             //Relation
             $table->foreign('carrer_id')->references('id')->on('carrers')

@@ -40,7 +40,7 @@
 <div class="form-group">
         <div class="input-group">
             <div class="input-group-addon">Foto</div>
-            {{ Form::file('file', ['class' => 'form-control']) }}
+            {{ Form::file('avatar', ['class' => 'form-control']) }}
             <div class="input-group-addon"><i class="fa fa-picture-o"></i></div>
         </div>
 </div>

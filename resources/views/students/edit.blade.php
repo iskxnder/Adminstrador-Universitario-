@@ -12,7 +12,7 @@
 
                     @include('students.partials.error')
                     
-                    {!! Form::model($student, ['route'=> ['students.update', $student->id], 'method'=> 'PUT']) !!}
+                    {!! Form::model($student, ['route'=> ['students.update', $student->id], 'method'=> 'PUT', 'files' => true ]) !!}
                         @include('students.partials.form') 
                     {!! Form::close() !!}
 

@@ -12,7 +12,7 @@
 
                     @include('students.partials.error')
                     
-                    {!! Form::open( ['route'=> 'students.store',] ) !!}
+                    {!! Form::open( ['route'=> 'students.store', 'files' => true] ) !!}
                         @include('students.partials.form')
                     {!! Form::close() !!}
 
