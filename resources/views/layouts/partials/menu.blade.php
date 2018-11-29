@@ -11,25 +11,25 @@
 
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="">
+                <li class="{{active('home')}}">
                     <a href="{{ route('home') }}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard</a>
                 </li>
                 <h3 class="menu-title">Modulos</h3><!-- /.menu-title -->
-                <li class="menu-item-has-children dropdown">
+                <li class="menu-item-has-children dropdown {{active('students/create')}} {{active('students')}}">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-male"></i>Estudiantes</a>
                     <ul class="sub-menu children dropdown-menu">
-                    <li><i class="fa fa-list"></i><a href="{{ route('students.index') }}">Lista</a></li>
+                    <li class=""><i class="fa fa-list"></i><a href="{{ route('students.index') }}">Lista</a></li>
                         <li><i class="fa fa-edit"></i><a href="{{ route('students.create') }}">Registro</a></li>
                     </ul>
                 </li>
-                <li class="menu-item-has-children dropdown">
+                <li class="menu-item-has-children dropdown ">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-suitcase"></i>Profesores</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-list"></i><a href="#">Lista</a></li>
                         <li><i class="fa fa-edit"></i><a href="#">Registro</a></li>
                     </ul>
                 </li>
-                <li class="menu-item-has-children dropdown">
+                <li class="menu-item-has-children dropdown {{active('carrers/create')}} {{active('carrers')}}">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-book"></i>Carreras</a>
                     <ul class="sub-menu children dropdown-menu">
                     <li><i class="menu-icon fa fa-list"></i><a href="{{ route('carrers.index') }}">Lista</a></li>

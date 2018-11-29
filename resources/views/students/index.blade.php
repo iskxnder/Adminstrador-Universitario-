@@ -7,7 +7,7 @@
         <div class="col-lg-8">
             <div class="card">
                 <div class="card-header">
-                    <strong class="card-title">Estudiantes</strong>
+                <strong class="card-title">Estudiantes</strong>
                 </div>
                 <div class="card-body">
                     <table class="table table-striped">
